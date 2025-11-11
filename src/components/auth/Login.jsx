@@ -46,13 +46,13 @@ const Login = () => {
         const newUser = result.user 
         const {displayName, email, photoURL} = newUser
         secureAxios.post('/users',{displayName, email, photoURL})
-        .then(res => {
-        //   console.log('after saving the user', res.data)
-        })
-        setError(false)
-        setSuccess(true)
-        navigate( location?.state || '/')
-        setGLoading(false)
+          .then(res => {
+            console.log('after saving the user', res.data)
+          setError(false)
+          setSuccess(true)
+          navigate( location?.state || '/')
+          })
+          setGLoading(false)
     })
     .catch(err => {
         console.log(err)

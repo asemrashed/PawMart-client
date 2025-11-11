@@ -22,6 +22,7 @@ const OutlineBtn = ({ to, value }) => {
         from-primary
         to-[#f7ebd0] 
         shadow-yellow-700
+        hover:text-gray-700
         hover:-translate-y-px
       "
     >

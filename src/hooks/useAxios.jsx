@@ -1,10 +1,11 @@
 import axios from "axios"
 
 const instance = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: import.meta.env.VITE_SERVER
 })
 
 const useAxios=()=>{
+    console.log(import.meta.env.VITE_SERVER)
     return instance
 }
 
