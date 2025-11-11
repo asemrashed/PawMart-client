@@ -1,0 +1,31 @@
+import React from "react";
+import { Link } from "react-router";
+
+const SecondaryBtn = ({ to, value }) => {
+  return (
+    <Link
+      to={to}
+      className="
+        btn
+        btn-sm
+        md:btn-md
+        shadow-none
+        px-4 py-2 
+        rounded-md 
+        transition-all 
+        duration-200 
+        bg-gradient-to-b
+        from-[#d1a71d] 
+        to-[#f2d598]
+        hover:shadow-md
+        shadow-yellow-700
+        border-0
+        hover:-translate-y-px
+      "
+    >
+      {value}
+    </Link>
+  );
+};
+
+export default SecondaryBtn;

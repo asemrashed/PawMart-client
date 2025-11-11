@@ -1,0 +1,11 @@
+#nav a:hover{
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-primary)
+}
+#nav a.active{
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-primary)
+}
+#nav a{
+    border-radius: 0;
+}
