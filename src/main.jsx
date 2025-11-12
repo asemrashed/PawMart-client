@@ -8,6 +8,10 @@ import Home from './components/home/Home.jsx'
 import Login from './components/auth/Login.jsx'
 import Register from './components/auth/Register.jsx'
 import AddNew from './components/AddListing/AddNew.jsx'
+import LatestListing from './components/home/latest/LatestListing.jsx'
+import PetsAndSupplies from './components/pets&supplies/Pets&SuppliesPage.jsx'
+import MyList from './components/myList/MyList.jsx'
+import ProductDetails from './components/detailsPage/DetailsPage.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +33,19 @@ const router = createBrowserRouter([
       {
         path: "/add-listing",
         Component: AddNew
+      },
+      {
+        path: "/pets&supplies",
+        Component: PetsAndSupplies
+      },
+      {
+        path: "/pets&supplies/:id",
+        loader: ({params})=> fetch(`${import.meta.env.VITE_SERVER}/listings/${params.id}`).then(res => res.json()),
+        Component: ProductDetails
+      },
+      {
+        path: "/my-list",
+        Component: MyList
       }
     ]
   }

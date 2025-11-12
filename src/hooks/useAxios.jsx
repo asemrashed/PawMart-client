@@ -5,7 +5,7 @@ const instance = axios.create({
 })
 
 const useAxios=()=>{
-    console.log(import.meta.env.VITE_SERVER)
+    // console.log(import.meta.env.VITE_SERVER)
     return instance
 }
 

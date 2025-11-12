@@ -12,6 +12,7 @@ const SecondaryBtn = ({ to, value }) => {
         shadow-none
         px-4 py-2 
         rounded-md 
+        text-primary-content
         transition-all 
         duration-200 
         bg-gradient-to-b
@@ -19,6 +20,7 @@ const SecondaryBtn = ({ to, value }) => {
         to-[#f2d598]
         hover:shadow-md
         shadow-yellow-700
+        hover:font-bold
         border-0
         hover:-translate-y-px
       "

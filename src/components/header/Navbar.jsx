@@ -71,9 +71,10 @@ const Navbar = () => {
           <ul
             tabIndex="-1"
             id="nav"
-            className="menu menu-xl dropdown-content bg-white rounded-box text-gray-700 rounded-t-none z-20 mt-3 w-52 p-2 shadow"
+            className="menu menu-lg dropdown-content bg-base-300 text-secondary rounded-box rounded-t-none z-20 mt-3 w-52 p-2 shadow"
           >
             {navItems}
+            <div className="font-semibold pl-4 text-lg">Dark Mode <ThemeToggle/></div>
           </ul>
         </div>
         <Link to={'/'}><img src={logo} alt="logo" className="w-35 md:w-50 cursor-pointer"/></Link>
@@ -84,7 +85,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end flex items-center gap-4">
-        <ThemeToggle/>
+        <div className="hidden md:block"><ThemeToggle/></div>
         {user ? (
           <div className="dropdown dropdown-end z-3">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">

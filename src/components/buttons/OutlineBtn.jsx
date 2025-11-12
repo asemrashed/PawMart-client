@@ -13,6 +13,7 @@ const OutlineBtn = ({ to, value }) => {
         shadow-none
         px-4 py-2 
         rounded-md 
+        text-primary
         border-primary
         border-2
         transition-all 

@@ -4,7 +4,7 @@ import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthContext";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import OutlineAuctionBtn from "../buttons/OutlineActionBtn";
+import OutlineAuctionBtn from "../buttons/OutlineSubmitBtn";
 
 const Login = () => {
   const { userSignInWithGoogle, setLoading, userSignIn} = use(AuthContext)
@@ -69,7 +69,7 @@ const Login = () => {
     <div className="min-h-screen flex items-center">
     <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-md shadow-primary">
       {success && (
-        <h2 className="text-center py-2 font-semibold text-green-600 bg-green-300">
+        <h2 className="text-center py-2 font-semibold text-green-600! bg-green-300">
           SuccessFully Logged in
         </h2>
       )}

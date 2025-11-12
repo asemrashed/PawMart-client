@@ -2,7 +2,7 @@ import React from "react";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useNavigate } from "react-router";
-import OutlineActionBtn from "../buttons/OutlineActionBtn";
+import OutlineActionBtn from "../buttons/OutlineSubmitBtn";
 
 const AddNew = () => {
     const {user}= useAuth()

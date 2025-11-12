@@ -4,7 +4,7 @@ import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthContext";
 import useAxios from "../../hooks/useAxios";
-import OutlineActionBtn from "../buttons/OutlineActionBtn";
+import OutlineActionBtn from "../buttons/OutlineSubmitBtn";
 import guest from "../../assets/user.png"
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
@@ -28,6 +28,16 @@ const Register = () => {
     const imgUrl = e.target.imgUrl.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+    
+    const passValidation = /^(?=.*[a-z])(?=.*[A-Z])(?!.*(.)\1).{6,}$/;
+    if (password && !passValidation.test(password)) {
+      setError(
+        "Password must be at least 6 characters long, contain at least one uppercase letter & one lowercase letter."
+      );
+      setSuccess(false);
+      setRegisterInProgress(false)
+      return;
+    }
 
     userSignUp({ email, password })
       .then(result => {
@@ -96,12 +106,12 @@ const Register = () => {
     <div className="min-h-screen flex items-center">
       <div className="card w-full bg-base-100 max-w-sm mx-auto shrink-0 shadow-md shadow-primary">
         {success && (
-          <h5 className="text-green-500 bg-green-200 text-center py-2">
+          <h5 className="text-green-700! bg-green-300 text-center py-2">
             Signup successfull
           </h5>
         )}
         {error && (
-          <h5 className="text-red-500 bg-red-200 text-center py-2">{error}</h5>
+          <h5 className="text-red-800! bg-red-400 text-center py-2">{error}</h5>
         )}
         <h2 className="text-primary font-semibold text-xl md:text-2xl pt-5 text-center">
           Register your account
