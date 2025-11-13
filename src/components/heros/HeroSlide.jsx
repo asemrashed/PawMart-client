@@ -43,13 +43,11 @@ const HeroSlide = () => {
                     className="w-full object-cover"
                   />
                 </figure>
-                <div className="flex flex-col items-center md:items-start justify-center gap-3 md:gap-5 p-3 md:p-7">
+                <div className="flex flex-col items-center justify-center gap-3 md:gap-5 p-3 md:p-7">
                   <h2 className="card-title text-lg md:text-2xl">
                     {name}
                   </h2>
-                  <div className="card-actions justify-end">
                     <PrimaryBtn to={'/pets&supplies/?category=Pets'} value={"Adopt Pets"} />
-                  </div>
                 </div>
               </div>
             </SwiperSlide>
