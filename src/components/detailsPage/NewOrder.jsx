@@ -1,10 +1,9 @@
-import React, { use, useState } from "react";
+import React, { use } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const NewOrder = ({ modalRef, post}) => {
   const { user, loading } = use(AuthContext);
-  const [orders, setOrders] = useState([]);
   const secureAxios = useAxiosSecure()
   const {_id, title, image, price} = post
   if (loading) {

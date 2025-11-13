@@ -1,13 +1,12 @@
 import React from "react";
-import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useNavigate } from "react-router";
 import OutlineActionBtn from "../buttons/OutlineSubmitBtn";
 
-const AddNew = () => {
-    const {user}= useAuth()
+const EditList = ({modalRef, listItem}) => {
     const axiosSecure = useAxiosSecure()
     const navigate = useNavigate()
+    const {_id, title, category, price, location, description, image, seller_name, email} = listItem
   const handleNewProduct = e => {
     e.preventDefault();
     const title = e.target.title.value
@@ -18,7 +17,7 @@ const AddNew = () => {
     const description = e.target.description.value
     const seller_name = e.target.name.value
     const email = e.target.email.value
-    const newList = {
+    const editedList = {
         title, 
         category, 
         price, 
@@ -28,40 +27,40 @@ const AddNew = () => {
         email, 
         location,
     }
-    console.log(newList);
-    axiosSecure.post(`/listings`, newList)
+    axiosSecure.patch(`/listings/${_id}`, editedList)
     .then(res =>{
-        console.log(res)
+        // console.log(res)
         e.target.reset()
-        navigate('/')
+        navigate(`/pets&supplies/${_id}`)
     })
   };
 //   console.log('user', user)
   return (
-    <div className="max-w-[1200px] mx-auto my-5 md:my-10">
-      <h1 className="font-bold text-2xl md:text-4xl text-center mb-3">
-        Create Pet Adotion/Product Post
-      </h1>
+    <dialog ref={modalRef} className="modal modal-bottom sm:modal-middle">
+      <div className="modal-box">
+        <h3 className="font-bold text-xl md:text-2xl text-center mb-2">
+          Edit your post
+        </h3>
+        <hr />
 
       <form
         onSubmit={handleNewProduct}
-        className="fieldset w-11/12 md:w-1/3 mx-auto flex flex-col gap-2 text-base md:text-lg mt-2 p-5 shadow-sm md:shadow-md shadow-primary rounded-xl"
+        className="fieldset w-full mx-auto flex flex-col gap-2 text-base md:text-lg mt-2 p-5 shadow-sm md:shadow-md shadow-primary rounded-xl"
       >
-        <h2 className="text-xl md:text:2xl font-semibold">Product Details</h2><hr/>
         <div className="flex items-center justify-between gap-3">
           <div className="w-1/2">
-            <label className="">Product/Pet Name</label>
+            <label className="">Pet/Product Name</label>
             <input
               name="title"
               type="text"
               className="input w-full mt-1"
-              placeholder="Product name"
+              defaultValue={title}
               required
             />
           </div>
           <div className="w-1/2">
             <label className="">Category</label>
-            <select name="category" className="select mt-1">
+            <select name="category" className="select mt-1" defaultValue={category}>
               <option>Pets</option>
               <option>Food</option>
               <option>Accessories</option>
@@ -76,7 +75,7 @@ const AddNew = () => {
               name="price"
               type="number"
               className="input w-full mt-1"
-              placeholder="$$$"
+              defaultValue={price}
               required
             />
           </div>
@@ -86,8 +85,7 @@ const AddNew = () => {
                 name="location"
                 type="text"
                 className="input w-full mt-2"
-                placeholder="Uttara Dhaka "
-                required
+                defaultValue={location}
             />
           </div>
         </div>
@@ -97,8 +95,7 @@ const AddNew = () => {
             name="description"
             type="text"
             className="textarea mt-1 w-full"
-            placeholder="Product details..."
-            required
+            defaultValue={description}
           />
         </div>
         <div>
@@ -107,8 +104,7 @@ const AddNew = () => {
             name="product_img"
             type="text"
             className="input w-full mt-1"
-            placeholder="Product image link"
-            required
+            defaultValue={image}
           />
         </div>
         {/* seller deatails */}
@@ -119,28 +115,37 @@ const AddNew = () => {
                 name="name" 
                 type="text" 
                 className="input w-full mt-1"
-                defaultValue={user?.displayName}
+                defaultValue={seller_name}
                 readOnly
             />
           </div>
+          
           <div className="w-1/2">
             <label className="">Your Email</label>
             <input 
                 name="email" 
                 type="email" 
                 className="input w-full mt-1" 
-                defaultValue={user?.email}
+                defaultValue={email}
                 readOnly
             />
           </div>
         </div>
 
-        <div className="flex justify-center mt-2">
-          <OutlineActionBtn value={'Add Now'}/>
+        <div className="flex justify-center mt-2 modal-action">
+            <button
+              type="button"
+              onClick={() => modalRef.current.close()}
+              className="btn btn-outline btn-error rounded-lg px-3 py-1"
+            >
+              Cancel
+            </button>
+          <OutlineActionBtn value={'Done'}/>
         </div>
       </form>
     </div>
+    </dialog>
   );
 };
 
-export default AddNew;
+export default EditList;

@@ -12,6 +12,7 @@ import LatestListing from './components/home/latest/LatestListing.jsx'
 import PetsAndSupplies from './components/pets&supplies/Pets&SuppliesPage.jsx'
 import MyList from './components/myList/MyList.jsx'
 import ProductDetails from './components/detailsPage/DetailsPage.jsx'
+import MyOrders from './components/myOrders/MyOrders.jsx'
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/my-list",
         Component: MyList
+      },
+      {
+        path: "/my-orders",
+        Component: MyOrders
       }
     ]
   }

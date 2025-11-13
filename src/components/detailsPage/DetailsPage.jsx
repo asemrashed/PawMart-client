@@ -6,7 +6,6 @@ import PrimaryActionBtn from "../buttons/PrimaryActionBtn";
 export default function ProductDetails() {
   const modalRef = useRef()
   const post = useLoaderData()
-  console.log('details',post)
 
   const handleModalOpen=()=>{
     modalRef.current.showModal()

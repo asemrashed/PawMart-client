@@ -21,7 +21,6 @@ const MyList = () => {
     }
   }, [user, axiosSecure]);
 
-
   return (
     <div className="max-w-[1200px] min-h-[60vh] mx-auto py-5 md:py-10 px-3 md:px-5">
       <h1 className="text-2xl md:text-4xl font-bold text-center mb-3 md:mb-5 text-secondary">My List :<span className="text-primary"> {list.length}</span></h1>
@@ -46,7 +45,7 @@ const MyList = () => {
             ))
         ) : (
             <p className="text-center text-gray-500 py-5">
-            No list found for this product.
+            No list per or pet product found.
             </p>
         )}
       </div>
