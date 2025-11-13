@@ -10,19 +10,10 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useRef } from "react";
 import EditList from "../addListing/EditList";
 
-const ListTableItem = ({ listItem, index }) => {
+const ListTableItem = ({ listItem, index, list, setList }) => {
   const {loading }= use(AuthContext)
         const modalRef = useRef()
-//   const [product, setProduct] = useState([])
-//   const {productId} = listItem
-//   const axios = useAxios()
   const secureAxios = useAxiosSecure()
-//   useEffect(()=>{
-//     axios.get(`/products/${productId}`)
-//     .then(res =>{
-//       setProduct(res.data)
-//     })
-//   },[productId, axios])
   
   if(loading){
     return (
@@ -53,8 +44,8 @@ const ListTableItem = ({ listItem, index }) => {
                 text: "Your post has been deleted.",
                 icon: "success"
               });
-            //   const currBids = bids.filter(b => b._id !== listItem._id)
-            //   setBids(currBids)
+              const currItem = list.filter(b => b._id !== listItem._id)
+              setList(currItem)
             }
           })
         console.log('Post deleted')

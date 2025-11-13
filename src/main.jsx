@@ -13,6 +13,7 @@ import PetsAndSupplies from './components/pets&supplies/Pets&SuppliesPage.jsx'
 import MyList from './components/myList/MyList.jsx'
 import ProductDetails from './components/detailsPage/DetailsPage.jsx'
 import MyOrders from './components/myOrders/MyOrders.jsx'
+import PrivetRoute from './routes/PrivetRoute.jsx'
 
 const router = createBrowserRouter([
   {
@@ -33,29 +34,24 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-listing",
-        Component: AddNew
+        element: <PrivetRoute><AddNew/></PrivetRoute>
       },
       {
         path: "/pets&supplies",
         Component: PetsAndSupplies
       },
       {
-        path: "/pets&supplies/?category=:category",
-        loader: ({query})=> fetch(`${import.meta.env.VITE_SERVER}/listings/${query.category}`).then(res => res.json()),
-        Component: ProductDetails
-      },
-      {
         path: "/pets&supplies/:id",
         loader: ({params})=> fetch(`${import.meta.env.VITE_SERVER}/listings/${params.id}`).then(res => res.json()),
-        Component: ProductDetails
+        element: <PrivetRoute><ProductDetails/></PrivetRoute>
       },
       {
         path: "/my-list",
-        Component: MyList
+        element: <PrivetRoute><MyList/></PrivetRoute>
       },
       {
         path: "/my-orders",
-        Component: MyOrders
+        element: <PrivetRoute><MyOrders/></PrivetRoute>
       }
     ]
   }

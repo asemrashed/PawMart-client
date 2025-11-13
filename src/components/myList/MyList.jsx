@@ -39,6 +39,8 @@ const MyList = () => {
             list.map((listItem, index) => (
             <ListTableItem 
               key={listItem._id} 
+              list={list}
+              setList={setList}
               listItem={listItem} 
               index={index + 1} 
             />

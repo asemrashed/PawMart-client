@@ -24,10 +24,10 @@ const MyOrders = () => {
 
   return (
     <div className="max-w-[1200px] min-h-[60vh] mx-auto py-5 md:py-10 px-3 md:px-5">
-      <h1 className="text-2xl md:text-4xl font-bold text-center mb-3 md:mb-5 text-secondary">My List :<span className="text-primary"> {orders.length}</span></h1> <hr />
+      <h1 className="text-2xl md:text-4xl font-bold text-center mb-3 md:mb-5 text-secondary">My Orders :<span className="text-primary"> {orders.length}</span></h1> <hr />
       <div>
         {/* Header */}
-        <div className="hidden md:grid grid-cols-[60px_2fr_1.5fr_0.7fr_0.7fr_1.3fr_1.3fr_2fr] items-center px-4 py-3 bg-base-300 font-semibold text-secondary text-sm">
+        <div className="hidden md:grid grid-cols-[60px_2.2fr_1.7fr_0.7fr_0.7fr_1.3fr_1.3fr_1fr] items-center px-4 py-3 bg-base-300 font-semibold text-secondary text-sm">
           <span>SL No</span>
           <span>Pet/Product</span>
           <span>Buyer Name</span>
