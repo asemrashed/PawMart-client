@@ -40,6 +40,11 @@ const router = createBrowserRouter([
         Component: PetsAndSupplies
       },
       {
+        path: "/pets&supplies/?category=:category",
+        loader: ({query})=> fetch(`${import.meta.env.VITE_SERVER}/listings/${query.category}`).then(res => res.json()),
+        Component: ProductDetails
+      },
+      {
         path: "/pets&supplies/:id",
         loader: ({params})=> fetch(`${import.meta.env.VITE_SERVER}/listings/${params.id}`).then(res => res.json()),
         Component: ProductDetails

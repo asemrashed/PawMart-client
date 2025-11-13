@@ -2,6 +2,7 @@ import React from 'react';
 import HeroSwiper from './Hero';
 import Categories from './category/Categories';
 import LatestListing from './latest/LatestListing';
+import WhyFromUs from './whyUs/WhyFromUs';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             <HeroSwiper/>
             <Categories/>
             <LatestListing/>
+            <WhyFromUs/>
         </div>
     );
 };
