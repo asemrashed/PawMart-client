@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Mr. Arafat Chowdhury",
+    "name": "Ms. Sarah Rahman",
     "imageUrl": "https://i.ibb.co.com/CfPHj3y/download.jpg"
   },
   {
@@ -11,12 +11,12 @@
   },
   {
     "id": 3,
-    "name": "Ms. Sarah Rahman",
+    "name": "Mr. Arafat Chowdhury",
     "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBirymCa0eZVQAAhhCC5Iu0dt_SO0BHvGDVw&s"
   },
   {
     "id": 4,
-    "name": "Dr. Minara Akter",
+    "name": "Dr. Minar Rahman",
     "imageUrl": "https://img.freepik.com/premium-vector/professional-male-doctor-vector-illustration_644704-104.jpg"
   }
 ]

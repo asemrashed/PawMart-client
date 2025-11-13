@@ -3,6 +3,7 @@ import HeroSwiper from './Hero';
 import Categories from './category/Categories';
 import LatestListing from './latest/LatestListing';
 import WhyFromUs from './whyUs/WhyFromUs';
+import Heros from '../heros/Heros';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Categories/>
             <LatestListing/>
             <WhyFromUs/>
+            <Heros/>
         </div>
     );
 };
