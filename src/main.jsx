@@ -13,11 +13,13 @@ import MyList from './components/myList/MyList.jsx'
 import ProductDetails from './components/detailsPage/DetailsPage.jsx'
 import MyOrders from './components/myOrders/MyOrders.jsx'
 import PrivetRoute from './routes/PrivetRoute.jsx'
+import Error from './layouts/Error.jsx'
 
 const router = createBrowserRouter([
   {
     path:"/",
     Component: RootLayout,
+    errorElement: <Error/>,
     children:[
       {
         index: true,
@@ -51,7 +53,7 @@ const router = createBrowserRouter([
       {
         path: "/my-orders",
         element: <PrivetRoute><MyOrders/></PrivetRoute>
-      }
+      },
     ]
   }
 ])
