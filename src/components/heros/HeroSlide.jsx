@@ -9,7 +9,6 @@ const herosPromise = fetch('/heros.json').then(res => res.json())
 
 const HeroSlide = () => {
     const heros = use(herosPromise)
-    console.log(heros);
   return (
     <div className="">
       <Swiper
@@ -33,7 +32,7 @@ const HeroSlide = () => {
           return (
             <SwiperSlide
               key={id}
-              className="max-w-1/2 md:max-w-1/4 mx-auto flex items-center justify-center"
+              className="max-w-1/2 md:max-w-1/4 mx-auto flex items-center justify-center mb-10"
             >
               <div className="w-full h-80 md:h-100 card card-side flex flex-col bg-black/40 shadow-sm">
                 <figure className="w-full rounded-b-none md:rounded-b-md rounded-tr-md md:rounded-tr-none">
@@ -57,10 +56,10 @@ const HeroSlide = () => {
 
       <style>{`
                 .swiper-pagination-bullet {
-                  background: #092604 !important;
+                  background: var(--color-primary) !important;
                 }
                 .swiper-pagination-bullet-active {
-                  background: #092604 !important;
+                  background: var(--color-secondary) !important;
                 }
               `}</style>
     </div>

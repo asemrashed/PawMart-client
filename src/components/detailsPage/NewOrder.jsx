@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const NewOrder = ({ modalRef, post}) => {
   const { user, loading } = use(AuthContext);
@@ -40,9 +41,15 @@ const NewOrder = ({ modalRef, post}) => {
     };
     secureAxios.post("/orders", currentOrder)
       .then(res => {
-        console.log("Bid placed successfull", res.data);
         if(res.data.insertedId){
           currentOrder._id = res.data.insertedId
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Order placed Successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
           e.target.reset();
           modalRef.current.close();
         }

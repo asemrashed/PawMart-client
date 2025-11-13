@@ -1,11 +1,8 @@
 import React from "react";
 import Swal from 'sweetalert2'
-// import { useEffect } from "react";
-// import { useState } from "react";
 import { Link } from "react-router";
 import { use } from "react";
 import { AuthContext } from "../../context/AuthContext";
-// import useAxios from "../../hooks/useAxios";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useRef } from "react";
 import EditList from "../addListing/EditList";
@@ -22,7 +19,15 @@ const ListTableItem = ({ listItem, index, list, setList }) => {
   }
   
   const handleModalOpen=()=>{
-    modalRef.current.showModal()
+    Swal.fire({
+      title:"Do you want to edit the post!",
+      confirmButtonText: "Yes, Edit it!",
+      showCancelButton: true,
+    }).then(result => {
+      if(result.isConfirmed){
+        modalRef.current.showModal()
+      }
+    });
   }
 
   const handleDelete=()=>{
@@ -76,19 +81,6 @@ const ListTableItem = ({ listItem, index, list, setList }) => {
           <Link to={`/pets&supplies/${listItem._id}`} className="font-bold text-primary">{listItem.title}</Link>
         </div>
       </div>
-
-      {/* Row 2 - Seller */}
-      {/* <div className="flex flex-row-reverse md:flex-row justify-start gap-3 order-4 md:order-3">
-        <img
-          src={listItem.seller_image}
-          alt={listItem.seller_name}
-          className="w-10 h-10 rounded-full object-cover"
-        />
-        <div>
-          <p className="font-semibold text-gray-800">{listItem.seller_name}</p>
-          <p className="text-xs md:text-sm text-gray-500">{listItem.email}</p>
-        </div>
-      </div> */}
 
       {/* Row 3 - Status */}
       <div className="flex justify-end md:justify-start items-center order-4">

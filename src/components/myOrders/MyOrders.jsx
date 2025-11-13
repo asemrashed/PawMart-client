@@ -20,7 +20,6 @@ const MyOrders = () => {
       })
     }
   }, [user, axiosSecure]);
-  console.log(orders);
 
   return (
     <div className="max-w-[1200px] min-h-[60vh] mx-auto py-5 md:py-10 px-3 md:px-5">

@@ -3,6 +3,7 @@ import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useNavigate } from "react-router";
 import OutlineActionBtn from "../buttons/OutlineSubmitBtn";
+import Swal from 'sweetalert2'
 
 const AddNew = () => {
     const {user}= useAuth()
@@ -32,6 +33,13 @@ const AddNew = () => {
     axiosSecure.post(`/listings`, newList)
     .then(res =>{
         console.log(res)
+        Swal.fire({
+          position: "top",
+          icon: "success",
+          title: "Pet/Product Added Successfully",
+          showConfirmButton: false,
+          timer: 1500
+        });
         e.target.reset()
         navigate('/')
     })

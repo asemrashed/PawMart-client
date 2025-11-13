@@ -5,6 +5,7 @@ import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../context/AuthContext";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import OutlineAuctionBtn from "../buttons/OutlineSubmitBtn";
+import Swal from 'sweetalert2'
 
 const Login = () => {
   const { userSignInWithGoogle, setLoading, userSignIn} = use(AuthContext)
@@ -26,6 +27,13 @@ const Login = () => {
     .then(result => {
         console.log(result.user)
         setSuccess(true)
+        Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Loggedin Successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
         navigate( location?.state || '/')
         setLoginInProgress(false)
     })
@@ -42,7 +50,6 @@ const Login = () => {
     e.preventDefault();
     userSignInWithGoogle()
     .then(result=>{
-        // console.log(result.user)
         const newUser = result.user 
         const {displayName, email, photoURL} = newUser
         secureAxios.post('/users',{displayName, email, photoURL})
@@ -50,6 +57,13 @@ const Login = () => {
             console.log('after saving the user', res.data)
           setError(false)
           setSuccess(true)
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Loggedin Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
           navigate( location?.state || '/')
           })
           setGLoading(false)

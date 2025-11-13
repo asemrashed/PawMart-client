@@ -7,6 +7,7 @@ import useAxios from "../../hooks/useAxios";
 import OutlineActionBtn from "../buttons/OutlineSubmitBtn";
 import guest from "../../assets/user.png"
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from 'sweetalert2'
 
 const Register = () => {
   const { setLoading, userSignUp, userSignInWithGoogle, updateUserInfo } =
@@ -63,8 +64,16 @@ const Register = () => {
             console.log(res.data)
             setSuccess(true);
             setError(null);
+            Swal.fire({
+              position: "top",
+              icon: "success",
+              title: "Registered Successfully",
+              showConfirmButton: false,
+              timer: 1500
+            });
             navigate("/");
             setRegisterInProgress(false)
+            
         })
       })
       .catch(err => {
@@ -86,6 +95,13 @@ const Register = () => {
           console.log("after saving the user", res.data);
           setError(null);
           setSuccess(true);
+          Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Registered Successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
           navigate(location?.state || "/");
           setGLoading(false)
         });

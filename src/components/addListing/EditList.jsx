@@ -2,12 +2,13 @@ import React from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useNavigate } from "react-router";
 import OutlineActionBtn from "../buttons/OutlineSubmitBtn";
+import Swal from 'sweetalert2'
 
 const EditList = ({modalRef, listItem}) => {
     const axiosSecure = useAxiosSecure()
     const navigate = useNavigate()
     const {_id, title, category, price, location, description, image, seller_name, email} = listItem
-  const handleNewProduct = e => {
+  const handleEdit = e => {
     e.preventDefault();
     const title = e.target.title.value
     const category = e.target.category.value
@@ -27,12 +28,29 @@ const EditList = ({modalRef, listItem}) => {
         email, 
         location,
     }
-    axiosSecure.patch(`/listings/${_id}`, editedList)
-    .then(res =>{
-        // console.log(res)
-        e.target.reset()
-        navigate(`/pets&supplies/${_id}`)
-    })
+    axiosSecure
+  .patch(`/listings/${_id}`, editedList)
+  .then(res => {
+    if (res?.data?.modifiedCount === 1) {
+      Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "Edited Successfully",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      e.target.reset();
+      navigate(`/pets&supplies/${_id}`);
+    } else {
+      modalRef.current.close()
+      Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Not updated",
+      });
+    }
+  })
+
   };
 //   console.log('user', user)
   return (
@@ -44,7 +62,7 @@ const EditList = ({modalRef, listItem}) => {
         <hr />
 
       <form
-        onSubmit={handleNewProduct}
+        onSubmit={handleEdit}
         className="fieldset w-full mx-auto flex flex-col gap-2 text-base md:text-lg mt-2 p-5 shadow-sm md:shadow-md shadow-primary rounded-xl"
       >
         <div className="flex items-center justify-between gap-3">
