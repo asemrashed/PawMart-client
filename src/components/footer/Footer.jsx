@@ -2,6 +2,7 @@ import React from "react";
 import logo from '../../assets/PawMart-logo.png'
 import { FaFacebook } from "react-icons/fa";
 import { FaSquareInstagram, FaSquareXTwitter } from "react-icons/fa6";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -13,17 +14,17 @@ const Footer = () => {
         </aside>
         <nav className="flex flex-col md:gap-2 items-center">
           <h6 className="font-extrabold">Quick Links</h6>
-          <a className="link link-hover">Home</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Terms & condition</a>
-          <a className="link link-hover"> Privacy Policy</a>
+          <Link to={'/'} className="link link-hover">Home</Link>
+          <Link to={'/#'} className="link link-hover">Contact</Link>
+          <Link to={'/#'} className="link link-hover">Terms & condition</Link>
+          <Link to={'/#'} className="link link-hover"> Privacy Policy</Link>
         </nav>
         <nav className="flex-1 flex flex-col items-center md:items-end">
           <h6 className="font-extrabold">Social</h6>
           <div className="grid grid-flow-col gap-4">
-            <FaFacebook className="btn rounded-full px-0" size={'25'}/>
-            <FaSquareInstagram className="btn rounded-full p-0" size={'25'}/>
-            <FaSquareXTwitter className="btn rounded-full px-0" size={'25'}/>
+            <FaFacebook className="btn bg-secondary text-base-100 rounded-full px-0" size={'25'}/>
+            <FaSquareInstagram className="btn bg-secondary text-base-100 rounded-full p-0" size={'25'}/>
+            <FaSquareXTwitter className="btn bg-secondary text-base-100 rounded-full px-0" size={'25'}/>
           </div>
         </nav>
       </footer>

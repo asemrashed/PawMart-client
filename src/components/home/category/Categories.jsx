@@ -30,7 +30,7 @@ const categories = [
 const Categories = () => {
     return (
         <div className='max-w-[1200px] mx-auto py-5 md:py-15'>
-            <h1 className='text-2xl md:text-4xl font-semibold text-center mb-10 md:mb-15'>Cathgories</h1>
+            <h1 className='text-2xl md:text-4xl font-modak font-semibold text-center mb-10 md:mb-15'>Cathgories</h1>
             {!accessories ? (
                 <div>Loading</div>
             ) : (
