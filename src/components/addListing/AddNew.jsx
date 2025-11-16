@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useNavigate } from "react-router";
@@ -6,13 +6,15 @@ import OutlineActionBtn from "../buttons/OutlineSubmitBtn";
 import Swal from 'sweetalert2'
 
 const AddNew = () => {
+    const [type, setType] = useState('pets')
+    const [forSale, setForSale] = useState(0)
     const {user}= useAuth()
     const axiosSecure = useAxiosSecure()
     const navigate = useNavigate()
   const handleNewProduct = e => {
     e.preventDefault();
     const title = e.target.title.value
-    const category = e.target.category.value
+    const category = type
     const price = Number(e.target.price.value)
     const location = e.target.location.value
     const image = e.target.product_img.value
@@ -69,7 +71,12 @@ const AddNew = () => {
           </div>
           <div className="w-1/2">
             <label className="">Category</label>
-            <select name="category" className="select mt-1">
+            <select 
+              value={type}
+              onChange={(e)=> setType(e.target.value)}
+              name="category" 
+              className="select mt-1"
+            >
               <option>Pets</option>
               <option>Food</option>
               <option>Accessories</option>
@@ -82,6 +89,8 @@ const AddNew = () => {
             <label className=""> Price</label>
             <input
               name="price"
+              value={type === 'Pets' ? 0 : forSale}
+              onChange={(e)=> setForSale(e.target.value)}
               type="number"
               className="input w-full mt-1"
               placeholder="$$$"

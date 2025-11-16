@@ -28,14 +28,14 @@ const Navbar = () => {
       <li key="2" className="font-semibold">
         <NavLink to="/pets&supplies">Pets & Supplies</NavLink>
       </li>
-      <li key="3" className="font-semibold">
-        <NavLink to="/add-listing">Add Listing</NavLink>
+      <li key="3" className={`font-semibold`}>
+        <NavLink className={` ${user ? 'cursor:pointer': 'cursor-not-allowed'}`} to="/add-listing">Add Listing</NavLink>
       </li>
-      <li key="4" className="font-semibold">
-        <NavLink to="/my-list">My Listings</NavLink>
+      <li key="4" className={`font-semibold`}>
+        <NavLink className={` ${user ? 'cursor:pointer': 'cursor-not-allowed'}`} to="/my-list">My Listings</NavLink>
       </li>
-      <li key="5" className="font-semibold">
-        <NavLink to="/my-orders">My Orders</NavLink>
+      <li key="5" className={`font-semibold`}>
+        <NavLink className={` ${user ? 'cursor:pointer': 'cursor-not-allowed'}`} to="/my-orders">My Orders</NavLink>
       </li>
     </>
   );

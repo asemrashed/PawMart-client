@@ -60,7 +60,7 @@ const PetsAndSupplies = () => {
         Pets & Supplies
       </h1>
 
-      <div className="flex items-center justify-between gap-2 mb-5 md:mb-10">
+      <div className="flex items-center justify-between gap-2 mb-5 md:mb-10 mx-3 md:mx-1">
         <div className="w-1/2 md:w-1/4">
           <div className="input flex items-center">
             <input
@@ -89,7 +89,7 @@ const PetsAndSupplies = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-7 mx-3 md:mx-1">
         {listings.length > 0 ? (
           listings.map((list) => <ListCard key={list._id} list={list} />)
         ) : (

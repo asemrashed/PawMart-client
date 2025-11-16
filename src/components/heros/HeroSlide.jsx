@@ -34,7 +34,7 @@ const HeroSlide = () => {
               key={id}
               className="max-w-1/2 md:max-w-1/4 mx-auto flex items-center justify-center mb-10"
             >
-              <div className="w-full h-80 md:h-100 card card-side flex flex-col bg-black/40 shadow-sm">
+              <div className="w-full h-80 md:h-110 card card-side flex flex-col bg-black/40 shadow-sm">
                 <figure className="w-full rounded-b-none md:rounded-b-md rounded-tr-md md:rounded-tr-none">
                   <img
                     src={imageUrl}
@@ -46,7 +46,7 @@ const HeroSlide = () => {
                   <h2 className="card-title text-lg md:text-2xl">
                     {name}
                   </h2>
-                    <PrimaryBtn to={'/pets&supplies/?category=Pets'} value={"Adopt Pets"} />
+                    <PrimaryBtn to={'/'} value={"Consult"} />
                 </div>
               </div>
             </SwiperSlide>

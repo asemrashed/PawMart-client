@@ -10,36 +10,54 @@ import PrimaryBtn from "../buttons/PrimaryBtn";
 const heroSlides = [
   {
     id: 1,
-    heading: "Purify Your Air Naturally",
-    slogan:
-      "Transform your home into a fresh, toxin-free sanctuary with living plants",
-    imgUrl: "https://i.ibb.co.com/XxBmVLzS/banner-second.jpg",
-  },{
+    heading: "Unlock Happiness with a Furry Companion",
+    slogan: "Experience joy, reduce stress, and enrich your life by adopting a loving pet today.",
+    button: "Adopt now",
+    imgUrl: "https://i.ibb.co.com/bj7Hgq9s/Screenshot-2025-11-16-042724hgc.png",
+    link: "/pets&supplies/?category=Pets",
+  },
+  {
     id: 2,
-    heading: "Find Peace in Plant Care",
-    slogan:
-      "Discover mindfulness and reduce stress through nurturing green companions",
-    imgUrl: "https://i.ibb.co.com/9mYdY00f/banner-main.png",
+    heading: "Indoor Pets, Infinite Joy",
+    slogan: "Turn your home into a lively sanctuary filled with the love of indoor pets.",
+    button: "Adopt now",
+    imgUrl: "https://i.ibb.co.com/mKXJjYN/Screenshot-2025-11-16-0445331.png",
+    link: "/pets&supplies/?category=Pets",
   },
   {
     id: 3,
-    heading: "Boost Mood with Greenery",
-    slogan: "Enhance productivity and happiness by bringing nature indoors",
-    imgUrl: "https://i.ibb.co.com/4RCSgXFv/toy-benner.png",
+    heading: "Stylish Gear for Your Pet",
+    slogan: "Upgrade your pet’s life with accessories designed for comfort, fun, and style.",
+    button: "Buy Accessories",
+    imgUrl: "https://i.ibb.co.com/KxRp19vb/Chat-GPT-Image-Nov-16-2025-05-39-26-AM.png",
+    link: "/pets&supplies/?category=Accessories",
   },
   {
     id: 4,
-    heading: "Boost Mood with Greenery",
-    slogan: "Enhance productivity and happiness by bringing nature indoors",
-    imgUrl: "https://i.ibb.co.com/0pTGN8fR/accessories-banner.png",
+    heading: "Playtime Just Got Better",
+    slogan: "Keep your pet active, happy, and entertained with our playful collection.",
+    button: "Buy Toys",
+    imgUrl: "https://i.ibb.co.com/N60tTr85/Screenshot-2025-11-09-183242.png",
+    link: "/pets&supplies/?category=Care Products",
   },
   {
     id: 5,
-    heading: "Boost Mood with Greenery",
-    slogan: "Enhance productivity and happiness by bringing nature indoors",
-    imgUrl: "https://i.ibb.co.com/LdmB1WZN/food-banner.png",
+    heading: "Feed Their Happiness",
+    slogan: "Nourish your pet with wholesome, tasty meals they’ll love every day.",
+    button: "Buy Foods",
+    imgUrl: "https://i.ibb.co.com/1txrrCx7/About-Us-Header-image.png",
+    link: "/pets&supplies/?category=Food",
+  },
+  {
+    id: 6,
+    heading: "Comfort Zones for Your Pets",
+    slogan: "Create the perfect retreat for your pets with our stylish houses and furniture.",
+    button: "Buy Furniture",
+    imgUrl: "https://i.ibb.co.com/WW82D6c9/Screenshot-2025-11-16-053133.png",
+    link: "/pets&supplies/?category=Accessories",
   }
 ];
+
 
 const HeroSwiper = () => {
   return (
@@ -68,7 +86,7 @@ const HeroSwiper = () => {
               </div>
 
               <div className="relative w-11/12 mx-auto h-full flex items-center">
-                <div className={`w-[90%] mx-auto md:mx-0 md:w-1/2 bg-black/40 ${slide.id === 4? 'md:bg-black/40':'md:bg-black/0'} bg-opacity-90 p-6 rounded-lg flex flex-col items-center md:items-start gap-2 md:gap-4`}>
+                <div className={`w-[90%] mx-auto md:mx-0 md:w-1/2 bg-black/40 bg-opacity-90 p-6 rounded-lg flex flex-col items-center md:items-start gap-2 md:gap-4`}>
                   <h1 className="text-xl md:text-6xl font-bold text-primary">
                     {slide.heading}
                   </h1>
@@ -76,7 +94,7 @@ const HeroSwiper = () => {
                     {slide.slogan}
                   </p>
                   <div>
-                    <PrimaryBtn to={'/#'} value={'Learn more..'} />
+                    <PrimaryBtn to={slide.link} value={slide.button} />
                   </div>
                 </div>
               </div>
@@ -92,7 +110,7 @@ const HeroSwiper = () => {
           padding: 10px;
         }
         .swiper-pagination-bullet {
-          background: var(--color-base-content) !important;
+          background: var(--color-primary) !important;
         }
         .swiper-pagination-bullet-active {
           background: var(--color-secondary) !important;
