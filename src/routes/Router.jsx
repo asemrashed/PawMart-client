@@ -17,6 +17,11 @@ import Dashboard from '../dashboard/Dashboard'
 import UsersManagement from '../dashboard/user/UserManagement'
 import PetsSupplies from '../dashboard/pets&supplies/Pets&supplies'
 import MyPosts from '../dashboard/myPosts/MyPosts'
+import AllOrders from '../dashboard/orders/AllOrders'
+import MyOrdersDashboard from '../dashboard/orders/MyOrders'
+import Profile from '../dashboard/profile/Profile'
+import About from '../components/pages/About'
+import Contact from '../components/pages/Contact'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +32,14 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home
+      },
+      {
+        path: "/about",
+        Component: About
+      },
+      {
+        path: "/contact",
+        Component: Contact
       },
       {
         path: "/login",
@@ -52,10 +65,6 @@ const router = createBrowserRouter([
       {
         path: "/my-list",
         element: <PrivetRoute><MyList/></PrivetRoute>
-      },
-      {
-        path: "/my-orders",
-        element: <PrivetRoute><MyOrders/></PrivetRoute>
       }
     ]
   },
@@ -78,6 +87,18 @@ const router = createBrowserRouter([
         {
             path: "/dashboard/my-posts",
             Component: MyPosts
+        },
+        {
+            path: "/dashboard/all-orders",
+            Component: AllOrders
+        },
+        {
+            path: "/dashboard/my-orders",
+            Component: MyOrdersDashboard
+        },
+        {
+            path: "/dashboard/profile",
+            Component: Profile
         },
     ]
     }

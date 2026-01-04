@@ -155,11 +155,11 @@ const DashboardLayout = () => {
                       : "hover:bg-base-300 text-base-content"
                   } is-drawer-close:tooltip is-drawer-close:tooltip-right`
                 }
-                data-tip="My Orders"
+                data-tip="All Orders"
               >
                 <BsFillBoxSeamFill className="text-lg" />
                 <span className="is-drawer-close:hidden">
-                  My Orders
+                  All Orders
                 </span>
               </NavLink>
             </li>
@@ -217,6 +217,7 @@ const DashboardLayout = () => {
               </NavLink>
             </li>
 
+{/* 
             <li>
               <NavLink
                 to="/dashboard/payments"
@@ -233,7 +234,6 @@ const DashboardLayout = () => {
                 <span className="is-drawer-close:hidden">Payments</span>
               </NavLink>
             </li>
-{/* 
             <li>
               <NavLink
                 to="/dashboard/settings"

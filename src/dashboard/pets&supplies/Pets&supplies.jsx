@@ -45,7 +45,7 @@ const PetsSupplies = () => {
 
   return (
     <div className="p-2">
-      <h1 className="text-3xl font-bold">MY Pets & Supplies</h1>
+      <h1 className="text-3xl font-bold">All Pets & Supplies</h1>
       {petsAndSupplies ? (
         <div className="table table-zebra mt-2 md:mt-3">
           <div className="w-full [text-decoration:none]">

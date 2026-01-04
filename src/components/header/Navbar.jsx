@@ -53,7 +53,7 @@ const Navbar = () => {
       <li className="font-semibold">
         <NavLink to="/contact">Contact</NavLink>
       </li>
-      <li className="dropdown dropdown-hover">
+      {/* <li className="dropdown dropdown-hover">
         <div tabIndex={0} role="button" className="">
           More ⬇
         </div>
@@ -68,7 +68,7 @@ const Navbar = () => {
             <NavLink to="/privacy">Privacy Policy</NavLink>
           </li>
         </ul>
-      </li>
+      </li> */}
     </>
   );
 
@@ -81,7 +81,7 @@ const Navbar = () => {
         <NavLink to="/my-list">My Listings</NavLink>
       </li>
       <li className="font-semibold">
-        <NavLink to="/my-orders">My Orders</NavLink>
+        <NavLink to="/dashboard/my-orders">My Orders</NavLink>
       </li>
       <li className="font-semibold">
         <NavLink to="/dashboard">Dashboard</NavLink>
@@ -110,7 +110,7 @@ const Navbar = () => {
       <ul className="menu menu-sm dropdown-content bg-white rounded-b-md mt-3 w-48 p-2 shadow">
         <li>
           <Link
-            to="/profile"
+            to="/dashboard/profile"
             className="text-center text-primary text-base md:text-xl mb-2"
           >
             {user?.displayName}
