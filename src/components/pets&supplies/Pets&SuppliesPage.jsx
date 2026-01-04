@@ -89,7 +89,7 @@ const PetsAndSupplies = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-7 mx-3 md:mx-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-7 mx-3 md:mx-1">
         {listings.length > 0 ? (
           listings.map((list) => <ListCard key={list._id} list={list} />)
         ) : (

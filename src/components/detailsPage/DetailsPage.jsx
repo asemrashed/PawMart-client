@@ -15,7 +15,7 @@ export default function ProductDetails() {
       {/* Left Image */}
       <div className="flex flex-col items-center justify-cneter gap-3 md:gap-5">
         <div className="w-full bg-white rounded-lg h-[400px] flex items-center justify-center">
-          {post.image ? (
+          {post?.image ? (
             <img
               src={post.image}
               alt={post.title}
@@ -42,7 +42,7 @@ export default function ProductDetails() {
               {post.category}
             </div>
             <Link
-              to="/listings"
+              to="/pets&supplies"
               className="text-secondary font-bold inline-flex items-center gap-1 outline-1 rounded-full px-2 hover:bg-base-300"
             >
               <span className="text-lg">&#8592;</span>

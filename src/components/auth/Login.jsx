@@ -126,7 +126,7 @@ const Login = () => {
         </form>
          <button 
             onClick={handleGoogleSignIn} 
-            className="btn bg-primary/70 hover:bg-blue-500 hover:text-white hover:border-0"
+            className="btn btn-xs md:btn-sm bg-primary/70 hover:bg-blue-500 hover:text-white hover:border-0"
         >
          {gLoading
               ? <span className="loading loading-spinner loading-xl"></span>

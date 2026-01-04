@@ -8,10 +8,10 @@ const OutlineBtn = ({ to, value }) => {
       className="
         btn
         btn-ghost
-        btn-sm
-        md:btn-md
+        btn-xs
+        md:btn-sm
         shadow-none
-        px-4 py-2 
+        px-3 py-1 
         rounded-md 
         text-primary
         border-primary

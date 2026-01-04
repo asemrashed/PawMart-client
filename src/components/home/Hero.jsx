@@ -71,7 +71,7 @@ const HeroSwiper = () => {
         pagination={{ clickable: true }}
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={swiper => console.log(swiper)}
-        className="max-w-[1440px] mx-auto h-60 md:h-130" 
+        className="max-w-[1440px] mx-auto h-[70vh]" 
         modules={[Navigation, Pagination, Autoplay]}
       >
         {heroSlides.map(slide => {

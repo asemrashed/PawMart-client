@@ -7,11 +7,11 @@ const PrimaryBtn = ({ to, value }) => {
       to={to}
       className="
         btn
-        btn-sm
-        md:btn-md
+        btn-xs
+        md:btn-sm
         shadow-none
         text-gray-700
-        px-4 py-2 
+        px-2 py-1 
         rounded-md 
         transition-all 
         duration-200 

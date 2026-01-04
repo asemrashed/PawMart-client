@@ -6,6 +6,7 @@ import PrimaryBtn from '../../buttons/PrimaryBtn';
 const LatestListing = () => {
     const [listItems, setListItems] = useState([])
     const axios = useAxios();
+    console.log('Rendering LatestListing', listItems)
     useEffect(()=>{
         try{
             axios.get("/latest-listings")
@@ -18,12 +19,12 @@ const LatestListing = () => {
         }
     },[axios])
     return (
-        <div className='max-w-[1200px] mx-auto flex flex-col items-center gap-5 py-5 md:pb-15'>
+        <div className='max-w-[1200px] mx-auto flex flex-col items-center md:pb-15'>
             <h1 className='text-2xl md:text-4xl font-semibold mb-10 md:mb-15'>Recent Listings</h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-7 mx-4 md:mx-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-7 mx-4 md:mx-1">
                 {listItems.map(list => <ListCard key={list._id} list={list}/>)}
             </div>
-            <div className='mt-2 md:mt-5'>
+            <div className='mt-5 md:mt-10'>
                 <PrimaryBtn to={'/pets&supplies'} value={'Brouse All'}/>
             </div>
         </div>

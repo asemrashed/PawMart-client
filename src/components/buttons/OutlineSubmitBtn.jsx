@@ -7,9 +7,11 @@ const OutlineActionBtn = ({ value }) => {
         type="submit"
       className="
         btn
+        btn-xs
+        md:btn-sm
         btn-ghost
         shadow-none
-        px-4 py-2 
+        px-3 py-1 
         rounded-md 
         border-[#ce8d02]
         transition-all 

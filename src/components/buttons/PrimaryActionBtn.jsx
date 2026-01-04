@@ -6,11 +6,11 @@ const PrimaryActionBtn = ({ action, value }) => {
       onClick={action}
       className="
         btn
-        btn-sm
-        md:btn-md
+        btn-xs
+        md:btn-sm
         shadow-none
         text-gray-700
-        px-4 py-2 
+        px-3 py-1 
         rounded-md 
         transition-all 
         duration-200 
