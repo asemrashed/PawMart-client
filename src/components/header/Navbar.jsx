@@ -81,7 +81,7 @@ const Navbar = () => {
         <NavLink to="/my-list">My Listings</NavLink>
       </li>
       <li className="font-semibold">
-        <NavLink to="/dashboard/my-orders">My Orders</NavLink>
+        <NavLink to="/my-orders">My Orders</NavLink>
       </li>
       <li className="font-semibold">
         <NavLink to="/dashboard">Dashboard</NavLink>

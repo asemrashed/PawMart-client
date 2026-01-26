@@ -36,7 +36,7 @@ const ListTableItem = ({ listItem, index, list, setList }) => {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#d6a430ff",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
@@ -62,7 +62,7 @@ const ListTableItem = ({ listItem, index, list, setList }) => {
   return (
     <div className="border-b border-base-300/80 px-4 py-3 hover:bg-base-300/50 transition 
       grid grid-cols-2 gap-3 
-      md:grid-cols-[60px_2fr_1fr_1fr_1fr] md:items-center">
+      md:grid-cols-[60px_2fr_1fr_1fr] md:items-center">
 
       {/* Row 1 - Index */}
       <span className="font-semibold my-auto text-secondary">{index}.</span>
@@ -90,7 +90,7 @@ const ListTableItem = ({ listItem, index, list, setList }) => {
       </div>
 
       {/* Row 3 - Remove Button */}
-      <div className="flex col-span-2 md:col-span-1 justify-between md:justify-start gap-2 order-5">
+      {/* <div className="flex col-span-2 md:col-span-1 justify-between md:justify-start gap-2 order-5">
         <button onClick={handleModalOpen} className="btn btn-sm md:btn-md btn-outline btn-secondary rounded hover:text-white border px-3 py-1 transition">
           Edit post
         </button>
@@ -98,7 +98,7 @@ const ListTableItem = ({ listItem, index, list, setList }) => {
           Remove post
         </button>
       </div>
-      <EditList modalRef={modalRef} listItem={listItem}/>
+      <EditList modalRef={modalRef} listItem={listItem}/> */}
     </div>
   );
 };

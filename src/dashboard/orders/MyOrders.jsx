@@ -65,8 +65,8 @@ const MyOrders = () => {
                 >
                   <li className="no-underline order-1">{i + 1}</li>
                   <li className="no-underline order-3 md:order-2 font-semibold flex items-center gap-2">
-                    <img src={order?.image} alt={order?.productName} className="w-12 h-10 rounded-md object-cover" />
-                    <p className="text-sm text-primary">{order?.productName}</p>
+                    <img src={order?.imageUrl} alt={order?.title} className="w-12 h-10 rounded-md object-cover" />
+                    <p className="text-sm text-primary">{order?.title}</p>
                   </li>
                   <li className="no-underline order-2 md:order-3 flex justify-end md:justify-start text-primary">
                     ${order?.price}

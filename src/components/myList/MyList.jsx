@@ -26,12 +26,11 @@ const MyList = () => {
       <h1 className="text-2xl md:text-4xl font-bold text-center mb-3 md:mb-5 text-secondary">My List :<span className="text-primary"> {list.length}</span></h1>
       <div>
         {/* Header */}
-        <div className="hidden md:grid grid-cols-[60px_2fr_1fr_1fr_1fr] items-center px-4 py-3 bg-base-300 font-semibold text-secondary text-sm">
+        <div className="hidden md:grid grid-cols-[60px_2fr_1fr_1fr] items-center px-4 py-3 bg-base-300 font-semibold text-secondary text-sm">
           <span>SL No</span>
           <span>Pet/Product</span>
           <span>Price</span>
           <span>Category</span>
-          <span>Actions</span>
         </div>
 
         {/* Body */}

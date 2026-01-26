@@ -16,7 +16,7 @@ import DashboardLayout from '../layouts/DashboardLayout'
 import Dashboard from '../dashboard/Dashboard'
 import UsersManagement from '../dashboard/user/UserManagement'
 import PetsSupplies from '../dashboard/pets&supplies/Pets&supplies'
-import MyPosts from '../dashboard/myPosts/MyPosts'
+import MyPosts from '../dashboard/myPets/MyPosts'
 import AllOrders from '../dashboard/orders/AllOrders'
 import MyOrdersDashboard from '../dashboard/orders/MyOrders'
 import Profile from '../dashboard/profile/Profile'
@@ -65,7 +65,11 @@ const router = createBrowserRouter([
       {
         path: "/my-list",
         element: <PrivetRoute><MyList/></PrivetRoute>
-      }
+      },
+      {
+        path: "/my-orders",
+        element: <PrivetRoute><MyOrders/></PrivetRoute>
+      },
     ]
   },
     {
@@ -73,8 +77,8 @@ const router = createBrowserRouter([
     element: <PrivetRoute><DashboardLayout/></PrivetRoute>,
     children:[
         {
-        index: true,
-        Component: Dashboard
+            path: "",
+            Component: Dashboard
         },
         {
             path: "/dashboard/users",

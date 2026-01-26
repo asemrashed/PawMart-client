@@ -17,6 +17,8 @@ const Login = () => {
   const [loginInProgress, setLoginInProgress] = useState(false)
   const [ gLoading, setGLoading] = useState(false)
   const secureAxios = useAxiosSecure()
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSignIn=(e)=>{
     setLoginInProgress(true)
@@ -76,6 +78,17 @@ const Login = () => {
     })
   }
 
+const handleUserAutoFill = () => {
+  setEmail("maher@gmail.com");
+  setPassword("Asdfgh");
+};
+
+const handleAdminAutoFill = () => {
+  setEmail("shihab@gmail.com");
+  setPassword("Asdfgh");
+};
+
+
   const togglePassVisibility = () => {
     setShowPass(!showPass);
   };
@@ -99,7 +112,9 @@ const Login = () => {
           <input
             name="email"
             type="email"
-            className="input"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="input w-full"
             placeholder="Email"
             required
           />
@@ -108,7 +123,9 @@ const Login = () => {
             <input
               type={showPass ? "text" : "password"}
               name="password"
-              className="input"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="input w-full"
               placeholder="Password"
               required
             />
@@ -121,6 +138,10 @@ const Login = () => {
           </div>
           <div>
             <p className="link link-hover text-gray-400">Forgot password?</p>
+          </div>
+          <div className="flex items-center justify-between">
+            <div onClick={handleUserAutoFill} className="btn btn-xs md:btn-sm btn-outline btn-primary">User autofill </div>
+            <div onClick={handleAdminAutoFill} className="btn btn-xs md:btn-sm btn-outline btn-secondary">Admin autofill </div>
           </div>
           <OutlineAuctionBtn value={loginInProgress? <span className="loading loading-spinner loading-xl"></span>: 'Login'}/>
         </form>

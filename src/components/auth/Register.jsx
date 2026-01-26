@@ -138,7 +138,7 @@ const Register = () => {
             <input
               name="name"
               type="text"
-              className="input"
+              className="input w-full"
               placeholder="Salah Uddin"
               required
             />
@@ -148,7 +148,7 @@ const Register = () => {
             <input
               name="imgUrl"
               type="text"
-              className="input"
+              className="input w-full"
               placeholder="Imgae Url"
             //   required
             />
@@ -156,7 +156,7 @@ const Register = () => {
             <input
               name="email"
               type="email"
-              className="input"
+              className="input w-full"
               placeholder="Email"
               required
             />
@@ -165,7 +165,7 @@ const Register = () => {
               <input
                 type={showPass ? "text" : "password"}
                 name="password"
-                className="input"
+                className="input w-full"
                 placeholder="Password"
                 required
               />

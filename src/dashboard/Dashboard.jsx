@@ -1,12 +1,28 @@
 import { useQuery } from "@tanstack/react-query";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaBoxOpen, FaUsers } from "react-icons/fa";
 import { MdOutlinePets } from "react-icons/md";
 import { Bar, BarChart, CartesianGrid, Cell, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import useAxiosSecure from "../hooks/useAxiosSecure";
+import useAuth from "../hooks/useAuth";
+import { useNavigate } from "react-router";
 
 const Dashboard = () => {
     const axiosSecure = useAxiosSecure();
+    const {user} = useAuth();
+    const navigation = useNavigate();
+    const [loading, setLoading] = useState(true);
+    
+      useEffect(() => {
+        fetch(`${import.meta.env.VITE_SERVER}/users/profile?email=${user?.email}`)
+        .then(res => res.json())
+        .then(data => {
+          if(!data?.role) {
+            navigation('/dashboard/profile')
+          }
+        })
+        .finally(() => setLoading(false))
+      }, [])
 
     const { data: stats = {} } = useQuery({
         queryKey: ['admin-stats'],
@@ -15,6 +31,10 @@ const Dashboard = () => {
             return res.data;
         }
     });
+
+    if(loading) {
+        return <div className="flex items-center justify-center h-[50vh]"> Loading...<span className="loading loading-spinner loading-xl"></span></div>
+    }
 
     const data = [
         {

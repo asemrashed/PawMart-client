@@ -17,7 +17,7 @@ const useAxiosSecure=()=>{
         )
         const resInterceptor = instance.interceptors.response.use(
             (res)=>{
-                console.log('from secAxios', res)
+                // console.log('from secAxios', res)
                 return res
             }, 
             (err)=>{

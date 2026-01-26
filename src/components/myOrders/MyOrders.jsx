@@ -26,15 +26,13 @@ const MyOrders = () => {
       <h1 className="text-2xl md:text-4xl font-bold text-center mb-3 md:mb-5 text-secondary">My Orders :<span className="text-primary"> {orders.length}</span></h1> <hr />
       <div>
         {/* Header */}
-        <div className="hidden md:grid grid-cols-[60px_2.2fr_1.7fr_0.7fr_0.7fr_1.3fr_1.3fr_1fr] items-center px-4 py-3 bg-base-300 font-semibold text-secondary text-sm">
+        <div className="hidden md:grid grid-cols-[60px_2fr_2fr_0.7fr_0.7fr_1.3fr] items-center px-4 py-3 bg-base-300 font-semibold text-secondary text-sm">
           <span>SL No</span>
           <span>Pet/Product</span>
           <span>Buyer Name</span>
           <span>Price</span>
           <span>Quantity</span>
-          <span>Address</span>
           <span>Date</span>
-          <span>Phone</span>
         </div>
 
         {/* Body */}

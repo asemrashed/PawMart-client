@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Outlet, NavLink, useNavigate } from "react-router";
 import { PiSidebarSimpleDuotone } from "react-icons/pi";
 import logo from "../assets/logo.png";
@@ -18,11 +18,26 @@ import useAuth from "../hooks/useAuth";
 
 const DashboardLayout = () => {
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const [isAdmin, setIsAdmin] = useState(false)
+  const { user, userSignOut } = useAuth();
 
   const handleLogout = () => {
+    userSignOut()
     navigate("/");
   };
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_SERVER}/users/profile?email=${user?.email}`)
+    .then(res => res.json())
+    .then(data => {
+        console.log('dsaf', data)
+      if(data?.role === "admin") {
+        setIsAdmin(true)
+      }else{
+        setIsAdmin(false)
+      }
+    })
+  }, [])
 
   return (
     <div className="drawer lg:drawer-open">
@@ -82,7 +97,7 @@ const DashboardLayout = () => {
         ></label>
 
         <div
-          className="flex min-h-full flex-col items-start bg-secondary
+          className="flex min-h-full flex-col items-start bg-gray-700
                      is-drawer-open:w-64
                      is-drawer-close:w-14
                      transition-all duration-300"
@@ -93,7 +108,9 @@ const DashboardLayout = () => {
           </Link>
 
           <ul className="menu w-full grow flex flex-col gap-2 p-2">
-            <li>
+            {isAdmin && (
+              <>
+              <li>
               <NavLink
                 to="/dashboard"
                 end
@@ -163,8 +180,12 @@ const DashboardLayout = () => {
                 </span>
               </NavLink>
             </li>
+            </>
+            )}
 
-            <li>
+            {!isAdmin && (
+                <>
+                <li>
               <NavLink
                 to="/dashboard/profile"
                 className={({ isActive }) =>
@@ -216,8 +237,10 @@ const DashboardLayout = () => {
                 </span>
               </NavLink>
             </li>
-
+            </>
+            )}
 {/* 
+
             <li>
               <NavLink
                 to="/dashboard/payments"

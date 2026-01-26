@@ -35,6 +35,7 @@ const AddNew = () => {
     axiosSecure.post(`/listings`, newList)
     .then(res =>{
         console.log(res)
+        if(res.data.insertedId){
         Swal.fire({
           position: "top",
           icon: "success",
@@ -44,6 +45,17 @@ const AddNew = () => {
         });
         e.target.reset()
         navigate('/')
+    }
+    })
+    .catch(err => {
+        console.log(err)
+        Swal.fire({
+          position: "top",
+          icon: "error",
+          title: "Pet/Product Added Failed",
+          showConfirmButton: false,
+          timer: 1500
+        });
     })
   };
 //   console.log('user', user)

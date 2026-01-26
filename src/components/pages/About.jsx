@@ -1,4 +1,5 @@
 import React from 'react';
+import aboutImage from '../../assets/banner/about.png'
 
 const About = () => {
     return (
@@ -7,7 +8,7 @@ const About = () => {
             <div className="flex flex-col md:flex-row gap-10 items-center">
                 <div className="flex-1">
                     <img 
-                        src="https://images.unsplash.com/photo-1583511655826-05700442b31b?q=80&w=1966&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        src={aboutImage} 
                         alt="About Us" 
                         className="rounded-lg shadow-lg w-full h-[400px] object-cover"
                     />
